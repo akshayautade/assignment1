@@ -1,0 +1,24 @@
+<ul class="pagination justify-content-center" *ngIf="pageCount">
+  <li class="page-item" *ngIf="pageCount>10">
+    <a class="btn btn-success btn-padding" href="javascript:void(0);" (click)="showFirst()">First</a>
+  </li>
+  <li class="page-item" *ngIf="pageCount>10">
+      <a class="btn btn-success btn-padding" href="javascript:void(0);" (click)="prevTen()">&lt;&lt;</a>
+    </li>
+  <li class="page-item">
+    <a class="btn btn-success btn-padding" href="javascript:void(0);" (click)="showPrev()">&lt;</a>
+  </li>
+  <li class="page-item" *ngFor="let page of createPageRange()">
+    <a class="btn btn-padding" [ngClass]="{'btn-success':page == currentPage, 'btn-light pages':page != currentPage }" href="javascript:void(0);"
+      (click)="getSelectedPage(page)">{{page}}</a>
+  </li>
+  <li class="page-item">
+    <a class="btn btn-success btn-padding" href="javascript:void(0);" (click)="showNext()">&gt;</a>
+  </li>
+  <li class="page-item" *ngIf="pageCount>10">
+      <a class="btn btn-success btn-padding" href="javascript:void(0);" (click)="nextTen()">&gt;&gt;</a>
+    </li>
+  <li class="page-item" *ngIf="pageCount>10">
+    <a class="btn btn-success btn-padding" href="javascript:void(0);" (click)="showLast()">Last</a>
+  </li>
+</ul>

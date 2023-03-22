@@ -1,0 +1,60 @@
+<div class="app-body">
+    <main class="main d-flex align-items-center mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card-group">
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <form [formGroup]="Form" (ngSubmit)="onLogin()">
+                                    <h2>{{loginMode ? 'Login to get started' : 'Register new user'}}</h2>
+                                    <div *ngIf="!loginMode" class="mb-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+                                        </div>
+                                    </div>
+                                    <div *ngIf="!loginMode" class="mb-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Username" autocomplete="username" required formControlName="username">
+                                        </div>
+                                        <small class="text-danger" *ngIf="!Form.get('username')?.valid && Form.get('username')?.touched">
+                                      <span *ngIf="Form.get('username')?.errors?.['required']">User Name required</span>
+                                      </small>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="Password" autocomplete="current-password" required formControlName="password">
+                                        </div>
+                                        <small class="text-danger" *ngIf="!Form.get('password')?.valid && Form.get('password')?.touched">
+                                      <span *ngIf="Form.get('password')?.errors?.['required']">Password required</span>
+                                      </small>
+                                    </div>
+                                    <div class="row">
+                                        <button type="submit" class="btn btn-outline-primary btn-block px-4">
+                                          {{loginMode ? 'Log In ' : 'Sign Up'}}
+                                        </button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 px-6 pt-4">
+                                            {{loginMode ? 'Dont Have Account ?' : 'Already Have Account ?'}}
+                                            <a (click)="onModeSwitch()">{{loginMode ? 'Create One' : 'Sign In'}}</a>
+                                        </div>
+                                        <div class="col-6 px-6 pt-4 text-right">
+                                            <a class="" (click)="forget()">Forgot password?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

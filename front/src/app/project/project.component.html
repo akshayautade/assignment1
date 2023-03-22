@@ -1,0 +1,73 @@
+<h3>Project Listing</h3>
+<!-- 
+<button class="btn btn-danger float-right mx-2" (click)="signOut()">Log Out</button>
+<button class="btn btn-success float-right mx-3" routerLink="add">Add Project</button> -->
+<div class="form">
+  <i class="fa fa-search"></i>
+  <input type="text" class="form-control form-input" placeholder="Search..." [(ngModel)]="term">
+</div>
+
+<div class ="sort">
+  
+<label class="form-group">Sort By</label>
+<select class="form-control" (change)="sortByFn($event)">
+  <option value=" projectName"> projectName </option>
+  <option value="reason"> reason </option>
+  <option value="type"> type </option>
+  <option value="division"> division </option>
+  <option value="catagory"> catagory </option>
+  <option value="priority"> priority </option>
+  <option value="dept"> dept </option>
+  <option value="location"> location </option>
+  <option value="status"> status </option>
+</select>
+
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Project Name</th>
+      <th scope="col">Reason</th>
+      <th scope="col">Type</th>
+      <th scope="col">Division</th>
+      <th scope="col">Catagory</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Dept</th>
+      <th scope="col">Location</th>
+      <th scope="col">Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects | filter:term,let i = index">
+      <td>{{project.projectName}}</td>
+      <td>{{project.reason}}</td>
+      <td>{{project.type}}</td>
+      <td>{{project.division}}</td>
+      <td>{{project.catagory}}</td>
+      <td>{{project.priority}}</td>
+      <td>{{project.dept}}</td>
+      <td>{{project.location}}</td>
+      <td>{{project.status}}</td>
+      <th>
+        <button [ngClass]="project.projectStatus!='Running'? 'btn btn-labeled btn-outline-primary': 'btn btn-primary'" 
+          (click)="onStatusChange(project._id,'Running')">{{project.projectStatus!="Running"? "Start": "Running"}}</button>
+      </th>
+      <th>
+        <button [ngClass]="project.projectStatus!='Closed'? 'btn btn-labeled btn-outline-primary': 'btn btn-primary'" 
+          (click)="onStatusChange(project._id,'Closed')">{{project.projectStatus!="Closed"? "Close": "Closed"}}</button>
+      </th>
+      <th>
+        <button [ngClass]="project.projectStatus!='Cancelled'? 'btn btn-labeled btn-outline-primary': 'btn btn-primary'" 
+          (click)="onStatusChange(project._id,'Cancelled')">{{project.projectStatus!="Cancelled"? "Cancel": "Cancelled"}}</button>
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row pt-2 justify-content-center">
+  <pagination *ngIf="totalRecords>0" [currentPage]="page" [pageCount]="totalRecords/10+1"
+    (pageSelected)="changePage($event)"></pagination>
+</div>

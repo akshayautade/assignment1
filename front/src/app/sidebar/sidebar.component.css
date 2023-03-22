@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    position: relative;
+    margin-left: -30px;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    height: 100%;
+    padding: 10px 0;
+}
+
+
+.wrapper .sidebar ul li {
+    list-style-type: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wrapper .sidebar ul li a {
+    color: #bdb8d7;
+    display: block;
+}
+
+.wrapper .sidebar ul li:hover {
+    background: #594f8d;
+}
+
+.wrapper .sidebar ul li:hover a {
+    color: #fff;
+}
+.hovered{
+    display: none;
+}
+.hovered:hover{
+    display: block;
+}
