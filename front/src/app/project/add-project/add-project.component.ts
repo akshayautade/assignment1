@@ -46,6 +46,7 @@ export class AddProjectComponent implements OnInit {
 
   onSubmit() {
     this.myReactiveForm.markAllAsTouched();
+    console.log(this.myReactiveForm);
     if (this.myReactiveForm.valid)
       if (this.id != '') {
         this.service.updateProject(this.id, this.myReactiveForm.value).subscribe(res => {

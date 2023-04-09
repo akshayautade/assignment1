@@ -1,162 +1,175 @@
-<h2>Add new project</h2>
-
-<div class="FormBox m-5">
-    <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-            <div class="form-group col-8">
-                <label for="projectName">Project Name</label>
-                <textarea rows="3" cols="50" class="form-control" id="projectName" placeholder="Enter project Name"
-                    formControlName="projectName"></textarea>
-
-                <small class="text-danger"
-                    *ngIf="!myReactiveForm.get('projectName')?.valid && myReactiveForm.get('projectName')?.touched">Enter
-                    valid project name</small>
-            </div>
+<div class="heading">
+    <div class="row">
+        <div class="col-4">
+            <h3><i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp; Add new project</h3>
         </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Reason</label>
-                    <select class="form-control" formControlName="reason">
-                        <option value='Business'>Business</option>
-                        <option value='Dealership'>Dealership</option>
-                        <option value='Transport'>Transport</option>
-                    </select>
-
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('reason')?.valid && myReactiveForm.get('reason')?.touched">
-                        Reason required</small>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>type</label>
-                    <select class="form-control" formControlName="type">
-                        <option value='Internal'>Internal</option>
-                        <option value='External'>External</option>
-                        <option value='Vendor'>Vendor</option>
-                    </select>
-
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('type')?.valid && myReactiveForm.get('type')?.touched">
-                        Project Type required</small>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>division</label>
-                    <select class="form-control" formControlName="division">
-                        <option value='Filters'>Filters</option>
-                        <option value='Compressor'>Compressor</option>
-                        <option value='Pumps'>Pumps</option>
-                        <option value='Glass'>Glass</option>
-                    </select>
-
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('division')?.valid && myReactiveForm.get('division')?.touched">
-                        Project division required</small>
-                </div>
-            </div>
+        <div class="col-4">
+            <img class="logo" src="../../assets/Images/login/Logo.svg" alt="">
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>catagory</label>
-                    <select class="form-control" formControlName="catagory">
-                        <option value='Quality A'>Quality A</option>
-                        <option value='Quality B'>Quality B</option>
-                        <option value='Quality C'>Quality c</option>
-                        <option value='Quality D'>Quality D</option>
-                    </select>
+        <div class="col-4">
 
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('catagory')?.valid && myReactiveForm.get('catagory')?.touched">
-                        Project catagory required</small>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>priority</label>
-                    <select class="form-control" formControlName="priority">
-                        <option value='High'>High</option>
-                        <option value='Medium'>Medium</option>
-                        <option value='Low'>Low</option>
-                    </select>
-
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('priority')?.valid && myReactiveForm.get('priority')?.touched">
-                        Priority Required</small>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>dept</label>
-                    <select class="form-control" formControlName="dept">
-                        <option value='Strategy'>Strategy</option>
-                        <option value='Finance'>Finance</option>
-                        <option value='Quality'>Quality</option>
-                        <option value='Maintainence'>Maintainence</option>
-                        <option value='Stores'>Stores</option>
-                    </select>
-
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('dept')?.valid && myReactiveForm.get('dept')?.touched">
-                        Project department required</small>
-                </div>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Start Date As Per Business Plan</label>
-                    <input type="date" class="form-control" formControlName="startDate">
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('startDate')?.valid && myReactiveForm.get('startDate')?.touched">
-                        Project start Date required</small>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>End Date As Per Business Plan</label>
-                    <input type="date" class="form-control" formControlName="endDate">
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('endDate')?.valid && myReactiveForm.get('endDate')?.touched">
-                        Project End Date required</small>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>location</label>
-                    <select class="form-control" formControlName="location">
-                        <option value='Pune'>Pune</option>
-                        <option value='Mumbai'>Mumbai</option>
-                        <option value='Mumbai'>Delhi</option>
-                    </select>
-                    <small class="text-danger"
-                        *ngIf="!myReactiveForm.get('location')?.valid && myReactiveForm.get('location')?.touched">
-                        Project Location required</small>
-                </div>
-            </div>
-        </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-8">
+    <div class="card m-3 rounded">
 
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>status</label>
-                    <select class="form-control" disabled>
-                        <option value='Registered'>Registered</option>
-                        <option value='Register'>Register</option>
-                    </select>
+        <div class="FormBox m-5">
+            <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+                <div class="row mt-3">
+                    <div class="form-group col-4">
+                        <textarea rows="3" cols="50" class="projectName" id="projectName"
+                            placeholder="Enter Project theme" formControlName="projectName"></textarea>
+
+                        <small class="text-danger"
+                            *ngIf="!myReactiveForm.get('projectName')?.valid && myReactiveForm.get('projectName')?.touched">Project Theme required</small>
+                    </div>
                 </div>
-            </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Reason</label>
+                            <select class="form-control" formControlName="reason">
+                                <option value='Business'>Business</option>
+                                <option value='Dealership'>Dealership</option>
+                                <option value='Transport'>Transport</option>
+                            </select>
+
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('reason')?.valid && myReactiveForm.get('reason')?.touched">
+                                Reason required</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>type</label>
+                            <select class="form-control" formControlName="type">
+                                <option value='Internal'>Internal</option>
+                                <option value='External'>External</option>
+                                <option value='Vendor'>Vendor</option>
+                            </select>
+
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('type')?.valid && myReactiveForm.get('type')?.touched">
+                                Project Type required</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>division</label>
+                            <select class="form-control" formControlName="division">
+                                <option value='Filters'>Filters</option>
+                                <option value='Compressor'>Compressor</option>
+                                <option value='Pumps'>Pumps</option>
+                                <option value='Glass'>Glass</option>
+                            </select>
+
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('division')?.valid && myReactiveForm.get('division')?.touched">
+                                Project division required</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>catagory</label>
+                            <select class="form-control" formControlName="catagory">
+                                <option value='Quality A'>Quality A</option>
+                                <option value='Quality B'>Quality B</option>
+                                <option value='Quality C'>Quality c</option>
+                                <option value='Quality D'>Quality D</option>
+                            </select>
+
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('catagory')?.valid && myReactiveForm.get('catagory')?.touched">
+                                Project catagory required</small>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>priority</label>
+                            <select class="form-control" formControlName="priority">
+                                <option value='High'>High</option>
+                                <option value='Medium'>Medium</option>
+                                <option value='Low'>Low</option>
+                            </select>
+
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('priority')?.valid && myReactiveForm.get('priority')?.touched">
+                                Priority Required</small>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>dept</label>
+                            <select class="form-control" formControlName="dept">
+                                <option value='Strategy'>Strategy</option>
+                                <option value='Finance'>Finance</option>
+                                <option value='Quality'>Quality</option>
+                                <option value='Maintainence'>Maintainence</option>
+                                <option value='Stores'>Stores</option>
+                            </select>
+
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('dept')?.valid && myReactiveForm.get('dept')?.touched">
+                                Project department required</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Start Date As Per Business Plan</label>
+                            <input type="date" class="form-control" formControlName="startDate">
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('startDate')?.valid && myReactiveForm.get('startDate')?.touched">
+                                Project start Date required</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>End Date As Per Business Plan</label>
+                            <input type="date" class="form-control" formControlName="endDate">
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('endDate')?.valid && myReactiveForm.get('endDate')?.touched">
+                                Project End Date required</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>location</label>
+                            <select class="form-control" formControlName="location">
+                                <option value='Pune'>Pune</option>
+                                <option value='Mumbai'>Mumbai</option>
+                                <option value='Mumbai'>Delhi</option>
+                            </select>
+                            <small class="text-danger"
+                                *ngIf="!myReactiveForm.get('location')?.valid && myReactiveForm.get('location')?.touched">
+                                Project Location required</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-8">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>status :<b>Registered</b></label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-2">
+                        <button type="submit" class="bttn-active">Save Project</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <br>
-        <button type="submit" class="btn btn-success">Submit</button>
-    </form>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
+import { navbar } from '../constant/_nav';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,28 +10,34 @@ import { AuthService } from '../services/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
+  filteredMenus: any = [];
   isLoggedIn: boolean = true;
-  constructor(private service:AuthService) { }
+  constructor(private service: AuthService) { }
 
   ngOnInit(): void {
+
+    let menu = navbar.menus
+    menu.forEach((element: any) => {
+      this.filteredMenus.push(element)
+    })
   }
 
-  signOut(){
+  signOut() {
     Swal.fire({
       title: 'Log Out',
-      icon:'question',
+      icon: 'question',
       text: 'Are you sure ?',
       // timer: 2000,
-      showConfirmButton:true,
-      confirmButtonText:'Yes, Log Out',
-      showCancelButton:true,
-    }).then((res)=>{
-      if(res.isConfirmed){
+      showConfirmButton: true,
+      confirmButtonText: 'Yes, Log Out',
+      showCancelButton: true,
+    }).then((res) => {
+      if (res.isConfirmed) {
         this.service.SignOut();
-        this.isLoggedIn=false
+        this.isLoggedIn = false
       }
     })
-    
+
   }
 
 }

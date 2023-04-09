@@ -1,0 +1,57 @@
+.heading {
+    background-image: url("../../assets/Images/main/Header-bg.svg");
+    height: 150px;
+    background-size: 100%;
+    background-size: cover;
+}
+
+.heading h3 {
+    margin-left: 20px;
+    padding-top: 30px;
+    color: #FFFFFF;
+    font-family: "Nunito Sans Black";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.logo {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    height: 53px;
+    width: 60px;
+}
+
+.my-card {
+    border-left: 7px solid #0CC9E8;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 21px 0 rgba(173, 182, 217, 0.27);
+    padding: 0px 10px;
+    margin-bottom: 0px;
+}
+
+.my-card>h4 {
+    color: #474D52;
+    font-family: "Nunito Sans";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.my-card>h1 {
+    color: #474D52;
+    font-family: "Nunito Sans";
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 54px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.col-md-2 {
+    flex: 0 0 auto;
+    width: 20% !important;
+}

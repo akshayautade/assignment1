@@ -1,11 +1,18 @@
-<div *ngIf="isLoggedIn" class="wrapper">
-    <div class="sidebar">
-        <ul>
-            <li routerLink="/dashboard" title="Dashboard"><a><i class="fa fa-home "></i></a></li>
+<div class="container-fluid">
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+                <li *ngFor="let menu of filteredMenus"><a [routerLink]="menu.path" [title]="menu.text"><i
+                            [class]="menu.icon"></i></a></li>
+                <!-- <li routerLink="/dashboard" title="Dashboard"><a><i class="fa fa-home "></i></a></li>
             <li routerLink="/project" title="Projects"><a><i class="fa fa-folder "></i></a></li>
             <li routerLink="/project/add" title="Add Project"><a><i class="fa fa-folder-open"></i></a></li>
-            <li routerLink=" "><a><i class="fa fa-user "></i></a></li>
-            <li (click)="signOut()" title="Log Out"><a><i class="fa fa-sign-out "></i></a></li>
-        </ul>
+            <li routerLink=" "><a><i class="fa fa-user "></i></a></li>-->
+                <li (click)="signOut()" title="Log Out"><a><i class="fa fa-sign-out "></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="" style="margin-left: 3.5%;">
+        <router-outlet></router-outlet>
     </div>
 </div>

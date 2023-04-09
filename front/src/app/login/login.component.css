@@ -1,0 +1,92 @@
+.login-bg {
+    background-image: url("../../assets/Images/login/login-bg-1.svg");
+    background-size: 100%;
+    /* color: #fff; */
+    height: 530px;
+    background-size: cover;
+}
+
+.login-box {
+    margin: auto;
+    padding: 50px;
+    width: 410px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 7px 18px 0 rgba(2, 118, 179, 0.13);
+}
+
+.logo {
+    padding-top: 70px;
+    margin: auto;
+    width: 15%;
+}
+
+.title {
+    text-align: center;
+    height: 22px;
+    margin: 20px 0px;
+    color: #FFFFFF;
+    font-family: "Nunito Sans";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.login-box-heading {
+    text-align: center;
+    margin-bottom: 70px;
+    height: 27px;
+    color: #3F3F3F;
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.form-control {
+    height: 48px;
+    width: auto;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 7px 18px 0 rgba(2, 118, 179, 0.13);
+}
+
+.forget-pass {
+    margin-top: 20px;
+    margin-right: -10px;
+    float: right;
+    color: #025AAB;
+    font-family: "Work Sans";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+
+.bttn {
+    padding-top: 20px;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    display: flex;
+}
+
+.eye{
+    float: right;
+    margin: auto;
+    position:relative;
+    right:13px;
+    top:-36px
+}
+
+.login-btn {
+    height: 36px;
+    width: 169px;
+    border-radius: 18px;
+    background-color: #035FB2;
+
+    color: #FFFFFF;
+    font-family: "Nunito Sans";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+}

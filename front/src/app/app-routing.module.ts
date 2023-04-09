@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
   {
@@ -13,10 +14,15 @@ const routes: Routes = [
     path:'login',component: LoginComponent
   },
   {
-    path:'dashboard',component: DashboardComponent,canActivate:[AuthGuard]
-  },
-  {
-    path:'project',loadChildren: () => import('./project/project.module').then(x=>x.ProjectModule),canActivate:[AuthGuard]
+    path : '',  component : SidebarComponent,
+    children:[
+      {
+        path:'dashboard',component: DashboardComponent,canActivate:[AuthGuard]
+      },
+      {
+        path:'project',loadChildren: () => import('./project/project.module').then(x=>x.ProjectModule),canActivate:[AuthGuard]
+      }
+    ]
   },
   {
     path:'**',component: ErrorComponent

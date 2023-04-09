@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
   deptWiseCount() {
     let arr;
     this.service.deptWiseCount().subscribe((res: any) => {
-      // this.deptWiseDataCount = res
+      this.deptWiseDataCount = res
       let deptName: any = [];
       let registered: any = [];
       let closed: any = [];

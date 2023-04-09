@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private _authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-
+    document.body.className = "login-bg";
     this.Form = new FormGroup({
       'firstName': new FormControl(null),
       'lastName': new FormControl(null),

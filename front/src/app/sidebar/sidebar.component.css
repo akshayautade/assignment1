@@ -5,6 +5,7 @@
 }
 
 .wrapper .sidebar {
+    margin-top: 150px;
     position: fixed;
     height: 100%;
     padding: 10px 0;
@@ -23,12 +24,14 @@
     display: block;
 }
 
-.wrapper .sidebar ul li:hover {
+/* .wrapper .sidebar ul li:hover {
     background: #594f8d;
-}
+    color: #025AAB;
+} */
 
 .wrapper .sidebar ul li:hover a {
-    color: #fff;
+    color: #025AAB;
+    /* color: #fff; */
 }
 .hovered{
     display: none;

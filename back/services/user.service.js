@@ -29,11 +29,18 @@ exports.login = async function (obj) {
                 });
             }
             else
-                reject(utils.createErrorResponse(401,'Invalid username or password'))
+                // reject(utils.createErrorResponse(401,'Invalid username or password'))
+                reject({
+                    "Status": "False",
+                    "Message": "Invalid credentials"
+            })
                 // res.status(401).send({ message: 'Invalid username or password' });
         } catch (err) {
-            // res.json(err);
-            reject(utils.createErrorResponse(500,'Internal Server Error'))
+            reject({
+                "Status": "False",
+                "Message": "Invalid credentials"
+        });
+            // reject(utils.createErrorResponse(500,'Internal Server Error'))
         }
     })
 }
